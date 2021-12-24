@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-use App\Repositories\Enums\LogEnum;
-use App\Repositories\Enums\ResponseCodeEnum;
-use App\Repositories\Enums\ScheduleEnum;
+use App\Enums\LogEnum;
+use App\Enums\ResponseCodeEnum;
+use App\Enums\ScheduleEnum;
 
 return [
     // 响应状态码

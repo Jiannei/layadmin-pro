@@ -1,9 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Route;
-use Jiannei\Response\Laravel\Support\Facades\Response;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,20 +11,8 @@ use Jiannei\Response\Laravel\Support\Facades\Response;
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('author', function () {
-    $response = Http::withOptions(['timeout' => 3])->get('https://api.github.com/users/Jiannei');
-    $response->throw();
-
-    return Response::success($response->json());
-});
-
-Route::get('repo', function () {
-    $response = Http::withOptions(['timeout' => 3])->get('https://api.github.com/repos/Jiannei/laravel-api-starter');
-    $response->throw();
-
-    return Response::success($response->json());
+    return redirect(\route('admin.home'));
 });

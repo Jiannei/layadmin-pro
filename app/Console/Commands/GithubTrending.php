@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 
-use App\Repositories\Enums\ScheduleEnum;
-use App\Repositories\Models\User;
+use App\Enums\ScheduleEnum;
+use App\Models\User;
 
 class GithubTrending extends \Jiannei\Schedule\Laravel\Commands\Command
 {

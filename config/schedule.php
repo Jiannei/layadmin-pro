@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-use App\Repositories\Enums\ScheduleEnum;
+use App\Enums\ScheduleEnum;
 
 return [
     'table' => 'schedules',

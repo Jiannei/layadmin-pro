@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Repositories\Models;
+namespace App\Models;
 
 
 use App\Support\Traits\SerializeDate;

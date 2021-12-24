@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Repositories\Enums;
+namespace App\Enums;
 
 
 class ScheduleEnum extends \Jiannei\Schedule\Laravel\Repositories\Enums\ScheduleEnum
