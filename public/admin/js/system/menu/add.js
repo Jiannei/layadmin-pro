@@ -86,7 +86,7 @@ layui.use(['form', 'http', 'popup', 'context', 'icon', 'dtree', 'select'], funct
         href: data.field.href,
         icon: data.field.icon,
         open_type: data.field.open_type,
-        sort: data.field.sort,
+        order: data.field.order,
         p_id: data.field.p_id_select_nodeId,
       }
 

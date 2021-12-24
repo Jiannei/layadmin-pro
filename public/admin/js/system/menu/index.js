@@ -98,7 +98,7 @@ layui.use(['table', 'http', 'popup', 'common', 'treetable'], function () {
       data[field] = value
 
       http.ajax({
-        url: '/api/menus/' + id + '/sort',
+        url: '/api/menus/' + id + '/order',
         type: "patch",
         data: JSON.stringify(data),
         success: function (response) {

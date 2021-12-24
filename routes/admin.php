@@ -40,7 +40,7 @@ Route::prefix('api')->group(function () {
         Route::get('menus', [MenusController::class, 'index']);
         Route::get('menus/{id}', [MenusController::class, 'show']);
         Route::put('menus/{id}', [MenusController::class, 'update']);
-        Route::patch('menus/{id}/sort', [MenusController::class, 'updateSort']);
+        Route::patch('menus/{id}/order', [MenusController::class, 'updateOrder']);
         Route::post('menus', [MenusController::class, 'store']);
         Route::delete('menus/{id}', [MenusController::class, 'destroy']);
 

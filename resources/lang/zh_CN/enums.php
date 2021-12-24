@@ -24,6 +24,9 @@ return [
         HttpStatusCodeEnum::HTTP_UNAUTHORIZED => '授权失败',
 
         // 业务操作成功
+        ResponseCodeEnum::SERVICE_CREATE_SUCCESS => '新增成功',
+        ResponseCodeEnum::SERVICE_UPDATE_SUCCESS => '更新成功',
+        ResponseCodeEnum::SERVICE_DELETE_SUCCESS => '删除成功',
         ResponseCodeEnum::SERVICE_CACHE_CLEAR_SUCCESS => '缓存清除成功',
         ResponseCodeEnum::SERVICE_REGISTER_SUCCESS => '注册成功',
         ResponseCodeEnum::SERVICE_LOGIN_SUCCESS => '登录成功',

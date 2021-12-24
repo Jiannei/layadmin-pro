@@ -22,6 +22,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "league/fractal": "^0.19.2",
+        "overtrue/laravel-lang": "~5.0",
         "prettus/l5-repository": "^2.7"
     },
     "require-dev": {

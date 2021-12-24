@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Enums\ResponseCodeEnum;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MenuRequest;
 use App\Services\MenuService;
-use Illuminate\Http\Request;
 use Jiannei\Response\Laravel\Support\Facades\Response;
 
 class MenusController extends Controller
@@ -33,56 +34,32 @@ class MenusController extends Controller
         return Response::success($menu);
     }
 
-    public function update(Request $request, $id)
+    public function update(MenuRequest $request, $id)
     {
-        $this->validate($request, [
-            'title' => 'required|string',
-            'type' => 'required|integer',
-            'icon' => 'required_if:type,0',
-            'href' => 'required_if:type,1',
-            'open_type' => 'required_if:type,1',
-            'sort' => 'required|integer',
-            'p_id' => 'nullable|integer',
-        ]);
-
         $this->service->updateItem($request, $id);
 
-        return Response::ok('更新成功');
+        return Response::localize(ResponseCodeEnum::SERVICE_UPDATE_SUCCESS);
     }
 
-    public function updateSort(Request $request, $id)
+    public function updateOrder(MenuRequest $request, $id)
     {
-        $this->validate($request, [
-            'sort' => 'required|integer',
-        ]);
+        $this->service->updateOrder($id, $request->get('order'));
 
-        $this->service->updateSort($id, $request->get('sort'));
-
-        return Response::ok('更新成功');
+        return Response::localize(ResponseCodeEnum::SERVICE_UPDATE_SUCCESS);
     }
 
-    public function store(Request $request)
+    public function store(MenuRequest $request)
     {
-        $this->validate($request, [
-            'title' => 'required|string',
-            'type' => 'required|integer',
-            'icon' => 'required_if:type,0',
-            'href' => 'required_if:type,1',
-            'open_type' => 'required_if:type,1',
-            'sort' => 'required|integer',
-            'p_id' => 'nullable|integer',
-        ]);
-
         $this->service->addItem($request);
 
-        return Response::ok('新增成功');
+        return Response::localize(ResponseCodeEnum::SERVICE_CREATE_SUCCESS);
     }
 
     public function destroy($id)
     {
         $this->service->removeItem($id);
 
-        return Response::ok('删除成功');
+        return Response::localize(ResponseCodeEnum::SERVICE_DELETE_SUCCESS);
     }
 
     public function search()

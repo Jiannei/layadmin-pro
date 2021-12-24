@@ -24,7 +24,8 @@
             "class": "layui-input",
             "id": "title",
             "name": "title",
-            "lay-verify": "required"
+            "lay-verify": "required",
+            "autocomplete": "off"
           }
         },
         {
@@ -86,9 +87,10 @@
           "attributes": {
             "type": "text",
             "class": "layui-input",
-            "id": "sort",
-            "name": "sort",
-            "lay-verify": "required"
+            "id": "order",
+            "name": "order",
+            "lay-verify": "required",
+            "autocomplete": "off"
           }
         }
       ],

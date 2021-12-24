@@ -67,7 +67,7 @@
               "title": "打开方式"
             },
             {
-              "field": "sort",
+              "field": "order",
               "title": "排序",
               "edit": "text"
             },

@@ -9,19 +9,9 @@ use Illuminate\Support\Str;
 
 class MenuService extends Service
 {
-    /**
-     * @var MenuRepository
-     */
-    private $repository;
-    /**
-     * @var MenuValidator
-     */
-    private $validator;
-
-    public function __construct(MenuRepository $repository, MenuValidator $validator)
+    public function __construct(private MenuRepository $repository,private MenuValidator $validator)
     {
-        $this->repository = $repository;
-        $this->validator  = $validator;
+
     }
 
     public function search()
@@ -61,9 +51,9 @@ class MenuService extends Service
         return true;
     }
 
-    public function updateSort($id, $sort)
+    public function updateOrder($id, $order)
     {
-        $this->repository->update(['sort' => $sort], $id);
+        $this->repository->update(['order' => $order], $id);
 
         return true;
     }

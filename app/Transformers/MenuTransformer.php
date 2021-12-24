@@ -37,7 +37,7 @@ class MenuTransformer extends TransformerAbstract
             'type' => $model->p_id ? 1 : 0,
             'parentId' => $model->p_id,
             'last' => !$model->children->count(),
-            'sort' => $model->sort,
+            'order' => $model->order,
         ];
     }
 }

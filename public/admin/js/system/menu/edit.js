@@ -94,7 +94,7 @@ layui.use(['form', 'http', 'popup', 'context', 'icon', 'dtree','select'], functi
               type: data.type,
               href: data.href,
               open_type: data.openType,
-              sort: data.sort,
+              order: data.order,
             })
 
             if (data.type == 1) {
@@ -120,7 +120,7 @@ layui.use(['form', 'http', 'popup', 'context', 'icon', 'dtree','select'], functi
         href: data.field.href,
         icon: data.field.icon,
         open_type: data.field.open_type,
-        sort: data.field.sort,
+        order: data.field.order,
         p_id: data.field.p_id_select_nodeId,
       }
 
