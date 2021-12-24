@@ -20,6 +20,7 @@ class ResponseCodeEnum extends HttpStatusCodeEnum
     // 举个栗子：你可以定义 001 ~ 099 表示系统状态；100 ~ 199 表示授权业务；200 ~ 299 表示用户业务...
     public const SERVICE_REGISTER_SUCCESS = 200101;
     public const SERVICE_LOGIN_SUCCESS = 200102;
+    public const SERVICE_LOGOUT_SUCCESS = 200103;
 
     // 客户端错误码：400 ~ 499 开头，后拼接 3 位
     public const CLIENT_PARAMETER_ERROR = 400001;

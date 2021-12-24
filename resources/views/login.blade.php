@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <input type="text" name="username" placeholder="账 户" lay-verify="required" hover class="layui-input"/>
+            <input type="text" name="username" placeholder="账 户" lay-verify="required" hover class="layui-input" autocomplete="off"/>
         </div>
         <div class="layui-form-item">
             <input type="password" name="password" placeholder="密 码" lay-verify="required" hover class="layui-input"/>

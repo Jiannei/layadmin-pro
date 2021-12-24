@@ -22,7 +22,7 @@ return [
     | 500, All failed responses return a 500 status code
     */
 
-    'error_code' => false,
+    'error_code' => 200,
 
     // You can use enumerations to define the code when the response is returned,
     // and set the response message according to the locale
@@ -63,7 +63,7 @@ return [
 
                 'fields' => [
                     // When data is nested with data, such as returning paged data, you can also set an alias for the inner data
-                    'data' => ['alias' => 'data', 'show' => true], // data/rows/list
+                    'data' => ['alias' => 'list', 'show' => true], // data/rows/list
 
                     'meta' => [
                         'alia' => 'meta',

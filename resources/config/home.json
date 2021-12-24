@@ -2,7 +2,7 @@
   "uri": "admin/home",
   "layout": "base",
   "title": "后台管理系统",
-  "view": "layadmin::home",
+  "view": "home",
   "styles": [
     "vendor/layadmin/css/loader.css",
     "vendor/layadmin/css/admin.css"

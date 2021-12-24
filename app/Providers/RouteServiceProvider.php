@@ -17,7 +17,9 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/admin/home';
+
+    public const LOGIN = '/admin/login';
 
     /**
      * The controller namespace for the application.
@@ -50,7 +52,12 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware(['web','admin.bootstrap'])
                 ->prefix(config('layadmin.path.prefix'))
                 ->namespace($this->namespace)
-                ->group(base_path('routes/admin.php'));
+                ->group(base_path('routes/admin/page.php'));
+
+            Route::middleware('web')
+                ->prefix(config('layadmin.path.prefix').'/api')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/admin/action.php'));
         });
     }
 
