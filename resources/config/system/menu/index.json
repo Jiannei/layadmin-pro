@@ -1,0 +1,136 @@
+{
+  "uri": "system/menu/index",
+  "layout": "treetable",
+  "title": "菜单列表",
+  "view": "layadmin::table",
+  "styles": [],
+  "scripts": [
+    "admin/js/system/menu/index.js"
+  ],
+  "components": {
+    "table": {
+      "element": "table",
+      "attributes": {
+        "id": "system-menu-index",
+        "lay-filter": "system-menu-index"
+      },
+      "config": {
+        "treeColIndex": 1,
+        "treeSpid": 0,
+        "treeIdName": "id",
+        "treePidName": "p_id",
+        "treeDefaultClose": false,
+        "elem": "#system-menu-index",
+        "url": "/api/menus",
+        "toolbar": "#system-menu-index-toolbar",
+        "height": "full-70",
+        "limit": 20,
+        "limits": [
+          15,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100
+        ],
+        "cols": [
+          [
+            {
+              "field": "id",
+              "title": "ID",
+              "width": 80
+            },
+            {
+              "field": "title",
+              "title": "名称"
+            },
+            {
+              "field": "icon",
+              "title": "图标",
+              "templet": "(function(d){ return '<i class=\"'+ d.icon +'\"></i>' })"
+            },
+            {
+              "field": "p_id",
+              "title": "类型",
+              "templet": "(function(d) { if (d.p_id == '0'){ return '<span>目录</span>' } else{  return '<span>菜单</span>'  } })"
+            },
+            {
+              "field": "href",
+              "title": "路径"
+            },
+            {
+              "field": "openType",
+              "title": "打开方式"
+            },
+            {
+              "field": "sort",
+              "title": "排序",
+              "edit": "text"
+            },
+            {
+              "type": "action",
+              "title": "操作",
+              "toolbar": "#system-menu-index-bar",
+              "align": "left",
+              "width": 120,
+              "fixed": "right"
+            }
+          ]
+        ]
+      },
+      "actions":[
+        {
+          "position": "toolbar",
+          "element": "button",
+          "label": "新增",
+          "icon": "layui-icon layui-icon-add-1",
+          "attributes": {
+            "class": "pear-btn pear-btn-primary pear-btn-md",
+            "lay-event": "add",
+            "data-api-uri": "/api/menus",
+            "data-api-method": "post"
+          }
+        },
+        {
+          "position": "toolbar",
+          "element": "button",
+          "label": "展开/折叠",
+          "icon": "layui-icon layui-icon-spread-left",
+          "attributes": {
+            "class": "pear-btn pear-btn-success pear-btn-sm",
+            "lay-event": "toggle"
+          }
+        },
+        {
+          "position": "column",
+          "element": "button",
+          "label": "",
+          "icon": "layui-icon layui-icon-edit",
+          "attributes": {
+            "class": "pear-btn pear-btn-primary pear-btn-sm",
+            "lay-event": "edit",
+            "data-field": "id",
+            "data-api-uri": "/api/menus/{id}",
+            "data-api-method": "put"
+          }
+        },
+        {
+          "position": "column",
+          "element": "button",
+          "label": "",
+          "icon": "layui-icon layui-icon-delete",
+          "attributes": {
+            "class": "pear-btn pear-btn-danger pear-btn-sm",
+            "lay-event": "delete",
+            "data-api-uri": "/api/menus/{id}",
+            "data-api-method": "delete"
+          }
+        }
+      ]
+    }
+  }
+}

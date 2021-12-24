@@ -49,15 +49,9 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
 
-            Route::middleware(['web','admin.bootstrap'])
-                ->prefix(config('layadmin.path.prefix'))
-                ->namespace($this->namespace)
-                ->group(base_path('routes/admin/page.php'));
-
             Route::middleware('web')
-                ->prefix(config('layadmin.path.prefix').'/api')
                 ->namespace($this->namespace)
-                ->group(base_path('routes/admin/action.php'));
+                ->group(base_path('routes/admin.php'));
         });
     }
 

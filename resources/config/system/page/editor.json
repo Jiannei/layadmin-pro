@@ -1,0 +1,24 @@
+{
+  "uri": "system/page/editor",
+  "layout": "form",
+  "title": "页面编辑",
+  "view": "system.page.editor",
+  "styles": [
+    "admin/jsoneditor/jsoneditor.min.css"
+  ],
+  "scripts": [
+    "admin/jsoneditor/jsoneditor.min.js",
+    "admin/js/system/page/editor.js"
+  ],
+  "components": {
+    "form": {
+      "element": "form",
+      "attributes": {
+        "class": "layui-form",
+        "lay-filter": "system-page"
+      },
+      "items": [],
+      "actions": []
+    }
+  }
+}

@@ -19,6 +19,7 @@
             <div id="control" class="layui-layout-control"></div>
             <!-- 顶 部 右 侧 菜 单 -->
             <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item layui-hide-xs"><a href="#" class="layui-icon layui-icon-delete" lay-active="clear"></a></li>
                 <li class="layui-nav-item layui-hide-xs"><a href="#" class="fullScreen layui-icon layui-icon-screen-full"></a></li>
                 <li class="layui-nav-item layui-hide-xs"><a href="http://www.pearadmin.com" class="layui-icon layui-icon-website"></a></li>
                 <li class="layui-nav-item layui-hide-xs message"></li>

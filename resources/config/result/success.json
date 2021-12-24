@@ -1,8 +1,0 @@
-{
-  "uri": "admin/errors/success",
-  "layout": "base",
-  "view": "layadmin::result.success",
-  "styles": [
-    "layadmin/css/result.css"
-  ]
-}

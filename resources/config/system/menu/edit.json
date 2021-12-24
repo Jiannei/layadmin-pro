@@ -1,0 +1,121 @@
+{
+  "uri": "system/menu/edit",
+  "layout": "form",
+  "title": "菜单编辑",
+  "view": "layadmin::form",
+  "styles": [
+  ],
+  "scripts": [
+    "admin/js/system/menu/edit.js"
+  ],
+  "components": {
+    "form": {
+      "element": "form",
+      "attributes": {
+        "class": "layui-form",
+        "lay-filter": "system-menu-edit"
+      },
+      "items": [
+        {
+          "element": "input",
+          "label": "名称",
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "title",
+            "name": "title",
+            "lay-verify": "required"
+          }
+        },
+        {
+          "element": "select",
+          "label": "类型",
+          "attributes": {
+            "id": "type",
+            "name": "type",
+            "lay-verify": "required",
+            "lay-filter": "type"
+          }
+        },
+        {
+          "element": "input",
+          "label": "图标",
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "icon",
+            "name": "icon",
+            "value": "layui-icon-face-smile"
+          }
+        },
+        {
+          "element": "ul",
+          "label": "父级菜单",
+          "hidden": true,
+          "attributes": {
+            "type": "text",
+            "class": "dtree",
+            "id": "p_id",
+            "data-id": "0"
+          }
+        },
+        {
+          "element": "select",
+          "label": "关联页面",
+          "hidden": true,
+          "attributes": {
+            "id": "href",
+            "name": "href",
+            "xm-select": "href",
+            "xm-select-radio": "",
+            "xm-select-search": ""
+          }
+        },
+        {
+          "element": "select",
+          "label": "打开方式",
+          "hidden": true,
+          "attributes": {
+            "id": "open_type",
+            "name": "open_type"
+          }
+        },
+        {
+          "element": "input",
+          "label": "排序",
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "sort",
+            "name": "sort",
+            "lay-verify": "required"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "element": "button",
+          "label": "提 交",
+          "icon": "layui-icon layui-icon-ok",
+          "attributes": {
+            "type": "submit",
+            "class": "pear-btn pear-btn-primary pear-btn-sm",
+            "lay-submit": "",
+            "lay-filter": "system-menu-edit-submit",
+            "data-api-uri": "/api/menus/{id}",
+            "data-api-method": "put"
+          }
+        },
+        {
+          "element": "button",
+          "label": "重 置",
+          "icon": "layui-icon layui-icon-refresh",
+          "attributes": {
+            "type": "reset",
+            "class": "pear-btn pear-btn-sm"
+          }
+        }
+      ]
+    }
+  }
+}

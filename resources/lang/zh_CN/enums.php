@@ -24,9 +24,11 @@ return [
         HttpStatusCodeEnum::HTTP_UNAUTHORIZED => '授权失败',
 
         // 业务操作成功
+        ResponseCodeEnum::SERVICE_CACHE_CLEAR_SUCCESS => '缓存清除成功',
         ResponseCodeEnum::SERVICE_REGISTER_SUCCESS => '注册成功',
         ResponseCodeEnum::SERVICE_LOGIN_SUCCESS => '登录成功',
         ResponseCodeEnum::SERVICE_LOGOUT_SUCCESS => '注销成功',
+        ResponseCodeEnum::SERVICE_PAGE_SYNC_SUCCESS => '同步成功',
 
         // 业务操作失败：授权业务
         ResponseCodeEnum::SERVICE_REGISTER_ERROR => '注册失败',

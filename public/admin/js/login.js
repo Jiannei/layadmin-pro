@@ -19,7 +19,7 @@ layui.use(['form', 'button', 'popup', 'http'], function () {
       time: 1000,
       done: function () {
         http.ajax({
-          url: '/admin/api/login',
+          url: '/api/login',
           data: JSON.stringify(data.field),
           success: function (response) {
             if (response.status === 'success') {
