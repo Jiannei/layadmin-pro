@@ -1,0 +1,8 @@
+{
+  "uri": "admin/result/error",
+  "layout": "base",
+  "view": "layadmin::result.error",
+  "styles": [
+    "layadmin/css/result.css"
+  ]
+}

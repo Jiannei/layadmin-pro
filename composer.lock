@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c930144ea35d2f6115993c925364f027",
+    "content-hash": "2ae19a7a22088d47c5a80ab2a2c5d0e7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1470,6 +1470,78 @@
                 "source": "https://github.com/Jiannei/laravel-schedule/tree/v1.0.1"
             },
             "time": "2021-09-20T02:05:06+00:00"
+        },
+        {
+            "name": "jiannei/layadmin",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jiannei/layadmin.git",
+                "reference": "a8c1dd388dcfd4b7d8a3216b32accf18c9cd0a73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jiannei/layadmin/zipball/a8c1dd388dcfd4b7d8a3216b32accf18c9cd0a73",
+                "reference": "a8c1dd388dcfd4b7d8a3216b32accf18c9cd0a73",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.3.3"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Jiannei\\LayAdmin\\Providers\\LaravelServiceProvider"
+                    ],
+                    "aliases": {
+                        "Pear": "Jiannei\\LayAdmin\\Support\\Facades\\LayAdmin"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Jiannei\\LayAdmin\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jiannei",
+                    "email": "longjian.huang@foxmail.com"
+                }
+            ],
+            "description": "Laravel admin based on Pear Admin.",
+            "keywords": [
+                "Pear Admin",
+                "laravel",
+                "laravel admin",
+                "layui",
+                "layui admin"
+            ],
+            "support": {
+                "issues": "https://github.com/Jiannei/layadmin/issues",
+                "source": "https://github.com/Jiannei/layadmin/tree/main"
+            },
+            "time": "2021-12-23T07:10:01+00:00"
         },
         {
             "name": "laravel/framework",
@@ -9053,7 +9125,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "jiannei/layadmin": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
