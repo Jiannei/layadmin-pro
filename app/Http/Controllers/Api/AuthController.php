@@ -29,7 +29,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return Response::ok('', ResponseCodeEnum::SERVICE_LOGIN_SUCCESS);
+        return Response::localize(ResponseCodeEnum::SERVICE_LOGIN_SUCCESS);
     }
 
     public function logout(Request $request)
@@ -38,6 +38,6 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return Response::ok('', ResponseCodeEnum::SERVICE_LOGOUT_SUCCESS);
+        return Response::localize(ResponseCodeEnum::SERVICE_LOGOUT_SUCCESS);
     }
 }

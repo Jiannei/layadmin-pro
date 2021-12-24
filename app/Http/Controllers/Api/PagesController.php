@@ -31,7 +31,7 @@ class PagesController extends Controller
     {
         $this->service->sync();
 
-        return Response::ok('', ResponseCodeEnum::SERVICE_PAGE_SYNC_SUCCESS);
+        return Response::localize(ResponseCodeEnum::SERVICE_PAGE_SYNC_SUCCESS);
     }
 
     public function show($id)

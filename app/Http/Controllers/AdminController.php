@@ -13,6 +13,6 @@ class AdminController extends Controller
     {
         Artisan::call(OptimizeClearCommand::class);
 
-        return Response::ok('', ResponseCodeEnum::SERVICE_CACHE_CLEAR_SUCCESS);
+        return Response::localize(ResponseCodeEnum::SERVICE_CACHE_CLEAR_SUCCESS);
     }
 }
