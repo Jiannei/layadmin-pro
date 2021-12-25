@@ -40,8 +40,6 @@ class MenuService extends Service
             $attributes['icon'] = $request['icon'];
         }
 
-        $attributes['updater_id'] = auth()->user()->id;
-
         if ($request['type'] == 0) {
             $attributes['p_id'] = 0;
         }
@@ -66,11 +64,6 @@ class MenuService extends Service
             $attributes['icon'] = "layui-icon " . $request['icon'];
             $attributes['p_id'] = 0;
         }
-
-        $userId = auth()->user()->id;
-
-        $attributes['creator_id'] = $userId;
-        $attributes['updater_id'] = $userId;
 
         $this->repository->create($attributes);
 

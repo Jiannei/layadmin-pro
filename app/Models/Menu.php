@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Support\Traits\HasCreator;
+use App\Support\Traits\HasUpdater;
+
 /**
  * Class Menu.
  *
@@ -9,6 +12,8 @@ namespace App\Models;
  */
 class Menu extends Model
 {
+    use HasCreator, HasUpdater;
+
     /**
      * The attributes that are mass assignable.
      *
