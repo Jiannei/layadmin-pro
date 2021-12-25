@@ -19,7 +19,7 @@ class MenuRequest extends FormRequest
                 'href' => 'required_if:type,1',
                 'open_type' => 'required_if:type,1',
                 'order' => 'required|integer',
-                'p_id' => 'required_if:type,1|integer',
+                'p_id' => 'required_if:type,1',
             ],
             'updateOrder' => [
                 'order' => 'required|integer',
