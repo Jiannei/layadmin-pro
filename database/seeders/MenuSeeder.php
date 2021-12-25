@@ -86,7 +86,7 @@ class MenuSeeder extends Seeder
                         "title" => "访问日志",
                         "icon" => "",
                         "open_type" => "_iframe",
-                        "href" => "system/log/page",
+                        "href" => "system/log/visit",
                     ],
                     [
                         "title" => "操作日志",

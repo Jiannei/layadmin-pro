@@ -1,0 +1,89 @@
+{
+  "uri": "system/log/action",
+  "layout": "table",
+  "title": "操作日志",
+  "view": "layadmin::table",
+  "styles": [],
+  "scripts": [
+    "admin/js/system/log/action.js"
+  ],
+  "components": {
+    "table": {
+      "element": "table",
+      "attributes": {
+        "id": "system-log-action",
+        "lay-filter": "system-log-action"
+      },
+      "config": {
+        "elem": "#system-log-action",
+        "url": "/api/logs",
+        "toolbar": "#system-log-action-toolbar",
+        "height": "full-70",
+        "limit": 20,
+        "limits": [
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100
+        ],
+        "where": {
+          "search": "log_name:visit",
+          "searchFields": "log_name:<>",
+          "transformer": "action"
+        },
+        "cols": [
+          [
+            {
+              "field": "id",
+              "title": "ID",
+              "width": 80
+            },
+            {
+              "field": "log_name",
+              "title": "模块"
+            },
+            {
+              "field": "subject_id",
+              "title": "操作对象ID"
+            },
+            {
+              "field": "action_type",
+              "title": "操作类型"
+            },
+            {
+              "field": "properties",
+              "title": "操作内容"
+            },
+            {
+              "field": "causer",
+              "title": "操作人"
+            },
+            {
+              "field": "created_at",
+              "title": "操作时间"
+            }
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "position": "toolbar",
+          "element": "button",
+          "label": "清除日志",
+          "icon": "pear-icon pear-icon-ashbin",
+          "attributes": {
+            "class": "pear-btn pear-btn-danger pear-btn-md",
+            "lay-event": "clean",
+            "data-api-uri": "/api/logs/clean",
+            "data-api-method": "delete"
+          }
+        }
+      ]
+    }
+  }
+}

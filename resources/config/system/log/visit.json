@@ -1,0 +1,96 @@
+{
+  "uri": "system/log/visit",
+  "layout": "table",
+  "title": "访问日志",
+  "view": "layadmin::table",
+  "styles": [],
+  "scripts": [
+    "admin/js/system/log/visit.js"
+  ],
+  "components": {
+    "table": {
+      "element": "table",
+      "attributes": {
+        "id": "system-log-visit",
+        "lay-filter": "system-log-visit"
+      },
+      "config": {
+        "elem": "#system-log-visit",
+        "url": "/api/logs",
+        "toolbar": "#system-log-visit-toolbar",
+        "height": "full-70",
+        "limit": 20,
+        "limits": [
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100
+        ],
+        "where": {
+          "search": "log_name:visit",
+          "searchFields": "log_name:="
+        },
+        "cols": [
+          [
+            {
+              "field": "id",
+              "title": "ID",
+              "width": 80
+            },
+            {
+              "field": "title",
+              "title": "访问页面"
+            },
+            {
+              "field": "uri",
+              "title": "页面地址"
+            },
+            {
+              "field": "ip",
+              "title": "访问IP"
+            },
+            {
+              "field": "browser",
+              "title": "浏览器"
+            },
+            {
+              "field": "platform",
+              "title": "操作系统"
+            },
+            {
+              "field": "duration",
+              "title": "耗时"
+            },
+            {
+              "field": "causer",
+              "title": "操作人"
+            },
+            {
+              "field": "created_at",
+              "title": "访问时间"
+            }
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "position": "toolbar",
+          "element": "button",
+          "label": "清除日志",
+          "icon": "pear-icon pear-icon-ashbin",
+          "attributes": {
+            "class": "pear-btn pear-btn-danger pear-btn-md",
+            "lay-event": "clean",
+            "data-api-uri": "/api/logs/clean",
+            "data-api-method": "delete"
+          }
+        }
+      ]
+    }
+  }
+}
