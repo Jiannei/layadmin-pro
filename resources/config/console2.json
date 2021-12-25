@@ -1,0 +1,12 @@
+{
+    "uri": "admin/console2",
+    "layout": "base",
+    "title": "数据分析",
+    "view": "console2",
+    "styles": [
+        "admin/css/console2.css"
+    ],
+    "scripts": [
+        "admin/js/console2.js"
+    ]
+}
