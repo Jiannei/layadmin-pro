@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 class MenuRequest extends FormRequest
 {
+    protected $defaultValidator = false;
+
     /**
      * Get the validation rules that apply to the request.
      *

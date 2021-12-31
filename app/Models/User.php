@@ -3,15 +3,18 @@
 
 namespace App\Models;
 
+use App\Support\Traits\SerializeDate;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 use Spatie\Activitylog\Traits\CausesActivity;
 
-class User extends Authenticatable
+class User extends Authenticatable implements Transformable
 {
-    use HasFactory, Notifiable, CausesActivity;
+    use HasFactory, Notifiable, CausesActivity, TransformableTrait, SerializeDate;
 
     /**
      * The attributes that are mass assignable.

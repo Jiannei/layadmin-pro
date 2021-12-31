@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest as BaseFormRequest;
 
 abstract class FormRequest extends BaseFormRequest
 {
-    protected $defaultValidator = false;// 是否使用默认的表单验证
+    protected $defaultValidator = true;// 是否使用默认的表单验证
 
     /**
      * Determine if the user is authorized to make this request.

@@ -1,0 +1,84 @@
+{
+  "uri": "org/user/add",
+  "layout": "form",
+  "title": "用户新增",
+  "view": "layadmin::form",
+  "styles": [
+  ],
+  "scripts": [
+    "admin/js/org/user/add.js"
+  ],
+  "components": {
+    "form": {
+      "element": "form",
+      "attributes": {
+        "class": "layui-form",
+        "lay-filter": "org-user-add"
+      },
+      "items": [
+        {
+          "element": "input",
+          "label": "账号",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "name",
+            "name": "name",
+            "autocomplete": "off",
+            "lay-verify": "required"
+          }
+        },
+        {
+          "element": "input",
+          "label": "邮箱",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "email",
+            "name": "email",
+            "autocomplete": "off",
+            "lay-verify": "required"
+          }
+        },
+        {
+          "element": "input",
+          "label": "密码",
+          "required": true,
+          "attributes": {
+            "type": "password",
+            "class": "layui-input",
+            "id": "password",
+            "name": "password",
+            "lay-verify": "required"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "element": "button",
+          "label": "提 交",
+          "icon": "layui-icon layui-icon-ok",
+          "attributes": {
+            "type": "submit",
+            "class": "pear-btn pear-btn-primary pear-btn-sm",
+            "lay-submit": "",
+            "lay-filter": "org-user-add-submit",
+            "data-api-uri": "/api/users",
+            "data-api-method": "post"
+          }
+        },
+        {
+          "element": "button",
+          "label": "重 置",
+          "icon": "layui-icon layui-icon-refresh",
+          "attributes": {
+            "type": "reset",
+            "class": "pear-btn pear-btn-sm"
+          }
+        }
+      ]
+    }
+  }
+}

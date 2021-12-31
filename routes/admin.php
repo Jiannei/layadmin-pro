@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\LogsController;
 use App\Http\Controllers\Api\MenusController;
 use App\Http\Controllers\Api\OptionsController;
 use App\Http\Controllers\Api\PagesController;
+use App\Http\Controllers\Api\UsersController;
 use Illuminate\Support\Facades\Route;
 use Jiannei\LayAdmin\Support\Facades\LayAdmin;
 
@@ -43,6 +44,13 @@ Route::prefix('api')->group(function () {
         Route::patch('menus/{id}/order', [MenusController::class, 'updateOrder']);
         Route::post('menus', [MenusController::class, 'store']);
         Route::delete('menus/{id}', [MenusController::class, 'destroy']);
+
+        // 用户管理
+        Route::get('users', [UsersController::class, 'index']);
+        Route::get('users/{id}', [UsersController::class, 'show']);
+        Route::put('users/{id}', [UsersController::class, 'update']);
+        Route::post('users', [UsersController::class, 'store']);
+        Route::delete('users/{id}', [UsersController::class, 'destroy']);
 
         // 日志管理
         Route::get('logs', [LogsController::class, 'index']);

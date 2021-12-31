@@ -1,0 +1,82 @@
+{
+  "uri": "org/user/edit",
+  "layout": "form",
+  "title": "用户新增",
+  "view": "layadmin::form",
+  "styles": [
+  ],
+  "scripts": [
+    "admin/js/org/user/edit.js"
+  ],
+  "components": {
+    "form": {
+      "element": "form",
+      "attributes": {
+        "class": "layui-form",
+        "lay-filter": "org-user-edit"
+      },
+      "items": [
+        {
+          "element": "input",
+          "label": "账号",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-input layui-disabled",
+            "id": "name",
+            "name": "name",
+            "autocomplete": "off",
+            "lay-verify": "required"
+          }
+        },
+        {
+          "element": "input",
+          "label": "邮箱",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "email",
+            "name": "email",
+            "autocomplete": "off",
+            "lay-verify": "required"
+          }
+        },
+        {
+          "element": "input",
+          "label": "密码",
+          "attributes": {
+            "type": "password",
+            "class": "layui-input",
+            "id": "password",
+            "name": "password"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "element": "button",
+          "label": "提 交",
+          "icon": "layui-icon layui-icon-ok",
+          "attributes": {
+            "type": "submit",
+            "class": "pear-btn pear-btn-primary pear-btn-sm",
+            "lay-submit": "",
+            "lay-filter": "org-user-edit-submit",
+            "data-api-uri": "/api/users",
+            "data-api-method": "post"
+          }
+        },
+        {
+          "element": "button",
+          "label": "重 置",
+          "icon": "layui-icon layui-icon-refresh",
+          "attributes": {
+            "type": "reset",
+            "class": "pear-btn pear-btn-sm"
+          }
+        }
+      ]
+    }
+  }
+}
