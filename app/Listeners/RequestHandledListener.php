@@ -24,8 +24,7 @@ class RequestHandledListener
             return;
         }
 
-        $prefix = config('layadmin.route.prefix');
-        $path = ltrim(Str::remove($prefix, $event->request->path()), DIRECTORY_SEPARATOR);
+        $path = ltrim(Str::remove(config('layadmin.routes.web.prefix'), $event->request->path()), DIRECTORY_SEPARATOR);
 
         $page = $this->pageRepository->skipPresenter()->take(1)->findWhere(['uri' => $path])->first();
         if (!$page) {
