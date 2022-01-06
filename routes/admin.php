@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 use Jiannei\LayAdmin\Support\Facades\LayAdmin;
 
 // 后台页面路由
-Route::prefix(config('layadmin.path.prefix'))->middleware('admin.bootstrap')->group(function () {
+Route::prefix(config('layadmin.route.prefix'))->middleware('admin.bootstrap')->group(function () {
     Route::get('/login', LayAdmin::view())->middleware('guest:admin');// 登录页
 
     Route::middleware('auth:admin')->group(function () {

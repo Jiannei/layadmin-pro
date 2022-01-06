@@ -29,7 +29,7 @@ layui.use(['table', 'http', 'popup', 'common'], function () {
       layer.open({
         type: 2,
         title: '新增',
-        content: '/' + layadmin.config.path.prefix + '/org/user/add',
+        content: '/' + layadmin.config.route.prefix + '/org/user/add',
         area: [common.isModile() ? '100%' : '500px', common.isModile() ? '100%' : '350px'],
         shade: 0.1,
         closeBtn: 1,
@@ -41,7 +41,7 @@ layui.use(['table', 'http', 'popup', 'common'], function () {
       layer.open({
         type: 2,
         title: '编辑',
-        content: '/' + layadmin.config.path.prefix + '/org/user/edit?id=' + data.id,
+        content: '/' + layadmin.config.route.prefix + '/org/user/edit?id=' + data.id,
         area: [common.isModile() ? '100%' : '500px', common.isModile() ? '100%' : '350px'],
         shade: 0.1,
         closeBtn: 1,

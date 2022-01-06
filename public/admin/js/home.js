@@ -22,7 +22,7 @@ layui.use(['admin', 'popup', 'http', 'util', 'layer', 'common'], function () {
         success: function (response) {
           if (response.status === 'success') {
             popup.success(response.message, function () {
-              location.href = '/' + layadmin.config.path.prefix + "/login";
+              location.href = '/' + layadmin.config.route.prefix + "/login";
             })
           } else {
             popup.failure(response.message);

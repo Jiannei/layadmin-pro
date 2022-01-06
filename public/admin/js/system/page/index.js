@@ -47,7 +47,7 @@ layui.use(['table', 'http', 'popup', 'common', 'form'], function () {
       layer.open({
         type: 2,
         title: '详情',
-        content: '/' + layadmin.config.path.prefix + '/system/page/editor?id=' + data.id,
+        content: '/' + layadmin.config.route.prefix + '/system/page/editor?id=' + data.id,
         area: [common.isModile() ? '100%' : '800px', common.isModile() ? '100%' : '600px'],
         shade: 0.1,
         closeBtn: 1,
