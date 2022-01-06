@@ -10,14 +10,33 @@
  */
 
 return [
-    'path' => [
-        'prefix' => env('ADMIN_PATH_PREFIX', 'admin'),
-
-        'home' => env('ADMIN_HOME_PATH', '/'),
-    ],
-
     'title' => env('ADMIN_TITLE', 'LayAdmin'),
     'desc' => env('ADMIN_DESC', '江 城 最 具 影 响 力 的 后 台 系 统 之 一'),
+
+    'guard' => env('ADMIN_GUARD', 'admin'),
+
+    'routes' => [
+        'web' => [
+            'prefix' => env('ADMIN_WEB_PREFIX', 'admin'),
+            'middleware' => ['web', 'admin'],
+        ],
+        'api' => [
+            'prefix' => env('ADMIN_API_PREFIX', 'api'),
+
+            'middleware' => ['web'],
+        ]
+    ],
+
+    'auth' => [
+        'guards' => [
+            'admin' => [
+                'driver' => 'session',
+                'provider' => 'users',
+            ],
+        ],
+    ],
+
+    'https' => env('ADMIN_HTTPS', false),
 
     // layui 组件全局配置
     'table' => [

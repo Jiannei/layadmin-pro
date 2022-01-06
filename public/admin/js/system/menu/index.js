@@ -49,7 +49,7 @@ layui.use(['table', 'http', 'popup', 'common', 'treetable'], function () {
       layer.open({
         type: 2,
         title: '新增',
-        content: '/' + layadmin.config.route.prefix + '/system/menu/add',
+        content: '/' + layadmin.config.routes.web.prefix + '/system/menu/add',
         area: [common.isModile() ? '100%' : '600px', common.isModile() ? '100%' : '520px'],
         shade: 0.1,
         closeBtn: 1,
@@ -61,7 +61,7 @@ layui.use(['table', 'http', 'popup', 'common', 'treetable'], function () {
       layer.open({
         type: 2,
         title: '编辑',
-        content: '/' + layadmin.config.route.prefix + '/system/menu/edit?id=' + data.id,
+        content: '/' + layadmin.config.routes.web.prefix + '/system/menu/edit?id=' + data.id,
         area: [common.isModile() ? '100%' : '600px', common.isModile() ? '100%' : '520px'],
         shade: 0.1,
         closeBtn: 1,

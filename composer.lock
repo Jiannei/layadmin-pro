@@ -400,16 +400,16 @@
         },
         {
             "name": "dragonmantank/cron-expression",
-            "version": "v3.2.2",
+            "version": "v3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dragonmantank/cron-expression.git",
-                "reference": "c9e208317b0cf679097cf976ffbb0b0eec81d4df"
+                "reference": "47c53bbb260d3c398fba9bfa9683dcf67add2579"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/c9e208317b0cf679097cf976ffbb0b0eec81d4df",
-                "reference": "c9e208317b0cf679097cf976ffbb0b0eec81d4df",
+                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/47c53bbb260d3c398fba9bfa9683dcf67add2579",
+                "reference": "47c53bbb260d3c398fba9bfa9683dcf67add2579",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -455,7 +455,7 @@
             ],
             "support": {
                 "issues": "https://github.com/dragonmantank/cron-expression/issues",
-                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.2.2"
+                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.2.3"
             },
             "funding": [
                 {
@@ -463,7 +463,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-05T06:05:42+00:00"
+            "time": "2022-01-06T05:35:07+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -1628,12 +1628,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Jiannei/layadmin.git",
-                "reference": "7b6920b8328f84e703f8c508d1b70754358f76c4"
+                "reference": "0d9546e030cf444ec91bdfe0274eb5599be70641"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Jiannei/layadmin/zipball/7b6920b8328f84e703f8c508d1b70754358f76c4",
-                "reference": "7b6920b8328f84e703f8c508d1b70754358f76c4",
+                "url": "https://api.github.com/repos/Jiannei/layadmin/zipball/0d9546e030cf444ec91bdfe0274eb5599be70641",
+                "reference": "0d9546e030cf444ec91bdfe0274eb5599be70641",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1692,7 +1692,7 @@
                 "issues": "https://github.com/Jiannei/layadmin/issues",
                 "source": "https://github.com/Jiannei/layadmin/tree/main"
             },
-            "time": "2022-01-06T03:15:46+00:00"
+            "time": "2022-01-06T09:13:44+00:00"
         },
         {
             "name": "laravel-lang/lang",

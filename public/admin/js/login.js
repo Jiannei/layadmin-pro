@@ -24,7 +24,7 @@ layui.use(['form', 'button', 'popup', 'http'], function () {
           success: function (response) {
             if (response.status === 'success') {
               popup.success(response.message, function () {
-                location.href = layadmin.config.path.home
+                location.href = '/' + layadmin.config.routes.web.prefix + '/home'
               });
             } else {
               popup.failure(response.message);

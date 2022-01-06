@@ -22,7 +22,7 @@ layui.use(['admin', 'popup', 'http', 'util', 'layer', 'common'], function () {
         success: function (response) {
           if (response.status === 'success') {
             popup.success(response.message, function () {
-              location.href = '/' + layadmin.config.route.prefix + "/login";
+              location.href = '/' + layadmin.config.routes.web.prefix + "/login";
             })
           } else {
             popup.failure(response.message);
@@ -46,10 +46,10 @@ layui.use(['admin', 'popup', 'http', 'util', 'layer', 'common'], function () {
           success: function (response) {
             layer.close(loading);
             if (response.status === 'success') {
-              popup.success(response.message,function () {
+              popup.success(response.message, function () {
                 localStorage.clear()
                 sessionStorage.clear()
-                location.href = layadmin.config.path.home;
+                location.href = '/' + layadmin.config.routes.web.prefix + '/home'
               })
             } else {
               popup.failure(response.message);
