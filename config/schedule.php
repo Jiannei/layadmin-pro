@@ -16,7 +16,7 @@ return [
 
     'enum' => ScheduleEnum::class,
 
-    'model' => \Jiannei\Schedule\Laravel\Repositories\Models\Schedule::class,
+    'model' => \App\Models\Schedule::class,
 
     'output' => [
         'path' => storage_path('schedule'),

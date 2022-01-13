@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\LogsController;
 use App\Http\Controllers\Api\MenusController;
 use App\Http\Controllers\Api\OptionsController;
 use App\Http\Controllers\Api\PagesController;
+use App\Http\Controllers\Api\SchedulesController;
 use App\Http\Controllers\Api\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [AuthController::class, 'login']);// 登录
 
 // 需授权的接口
-Route::middleware('auth:'.config('layadmin.guard'))->group(function () {
+Route::middleware('auth:admin')->group(function () {
     Route::delete('/logout', [AuthController::class, 'logout']);// 注销
 
     // 公用接口
@@ -53,4 +54,11 @@ Route::middleware('auth:'.config('layadmin.guard'))->group(function () {
     // 日志管理
     Route::get('logs', [LogsController::class, 'index']);
     Route::delete('logs/{name}', [LogsController::class, 'destroy']);
+
+    // 计划任务
+    Route::get('schedules', [SchedulesController::class, 'index']);
+    Route::get('schedules/{id}', [SchedulesController::class, 'show']);
+    Route::put('schedules/{id}', [SchedulesController::class, 'update']);
+    Route::post('schedules', [SchedulesController::class, 'store']);
+    Route::delete('schedules/{id}', [SchedulesController::class, 'destroy']);
 });

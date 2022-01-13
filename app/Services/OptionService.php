@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Contracts\MenuRepository;
 use App\Contracts\PageRepository;
-use Illuminate\Http\Request;
 
 class OptionService extends Service
 {
@@ -18,7 +17,7 @@ class OptionService extends Service
         $this->pageRepository = $pageRepository;
     }
 
-    public function menuType(Request $request)
+    public function menuType()
     {
         return [
             [
@@ -32,7 +31,7 @@ class OptionService extends Service
         ];
     }
 
-    public function menuOpenType(Request $request)
+    public function menuOpenType()
     {
         return [
             [
@@ -42,12 +41,26 @@ class OptionService extends Service
         ];
     }
 
-    public function menuTree(Request $request)
+    public function environments()
+    {
+        return [
+            [
+                'name' => 'local',
+                'value' => 'local'
+            ],
+            [
+                'name' => 'production',
+                'value' => 'production'
+            ],
+        ];
+    }
+
+    public function menuTree()
     {
         return $this->menuRepository->searchTree();
     }
 
-    public function pages(Request $request)
+    public function pages()
     {
         $pages = $this->pageRepository->with('menu')->findWhere(['menu_id' => 0]);
 

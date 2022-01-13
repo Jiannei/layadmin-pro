@@ -23,7 +23,7 @@ class CreateSchedulesTable extends Migration
             $table->boolean('active')->default(false);
             $table->string('timezone');
             $table->json('environments')->nullable();
-            $table->unsignedInteger('without_overlapping')->default(0);
+            $table->unsignedInteger('without_overlapping')->nullable()->default(0);
             $table->boolean('on_one_server')->default(false);
             $table->boolean('in_background')->default(false);
             $table->boolean('in_maintenance_mode')->default(false);

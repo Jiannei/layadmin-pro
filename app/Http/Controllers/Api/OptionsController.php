@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Services\OptionService;
-use Illuminate\Http\Request;
 use Jiannei\Response\Laravel\Support\Facades\Response;
 
 class OptionsController extends Controller
@@ -19,11 +18,11 @@ class OptionsController extends Controller
         $this->service = $service;
     }
 
-    public function options(Request $request, $keyword)
+    public function options($keyword)
     {
         $options = [];
         if (method_exists($this->service, $method = $keyword)) {
-            $options = $this->service->$method($request);
+            $options = $this->service->$method();
         }
 
         return Response::success($options);

@@ -1,0 +1,228 @@
+{
+  "uri": "system/schedule/edit",
+  "layout": "form",
+  "title": "计划任务编辑",
+  "view": "layadmin::form",
+  "styles": [
+  ],
+  "scripts": [
+    "admin/js/system/schedule/edit.js"
+  ],
+  "components": {
+    "form": {
+      "element": "form",
+      "attributes": {
+        "class": "layui-form",
+        "lay-filter": "system-schedule-edit"
+      },
+      "items": [
+        {
+          "element": "input",
+          "label": "执行命令",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-input layui-disabled",
+            "id": "command",
+            "name": "command",
+            "autocomplete": "off",
+            "lay-verify": "required",
+            "lay-verType": "tips",
+            "disabled": "true"
+          }
+        },
+        {
+          "element": "input",
+          "label": "命令参数",
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "parameters",
+            "name": "parameters",
+            "autocomplete": "off"
+          }
+        },
+        {
+          "element": "input",
+          "label": "执行间隔",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "expression",
+            "name": "expression",
+            "placeholder": "Cron 表达式：* * * * *",
+            "autocomplete": "off",
+            "lay-verify": "required",
+            "lay-verType": "tips"
+          }
+        },
+        {
+          "element": "textarea",
+          "label": "任务描述",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-textarea",
+            "id": "description",
+            "name": "description",
+            "autocomplete": "off",
+            "lay-verify": "required",
+            "lay-verType": "tips"
+          }
+        },
+        {
+          "element": "input",
+          "label": "状态",
+          "attributes": {
+            "type": "checkbox",
+            "id": "active",
+            "name": "active",
+            "lay-skin": "switch",
+            "lay-text": "启用|停用"
+          }
+        },
+        {
+          "element": "input",
+          "label": "时区",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "timezone",
+            "name": "timezone",
+            "value": "Asia/Shanghai",
+            "autocomplete": "off",
+            "lay-verify": "required",
+            "lay-verType": "tips"
+          }
+        },
+        {
+          "element": "select",
+          "label": "环境",
+          "required": true,
+          "attributes": {
+            "id": "environments",
+            "name": "environments",
+            "xm-select": "environments",
+            "xm-select-search": "",
+            "lay-verify": "required",
+            "lay-verType": "tips"
+          }
+        },
+        {
+          "element": "input",
+          "label": "重叠间隔",
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "without_overlapping",
+            "name": "without_overlapping",
+            "autocomplete": "off"
+          }
+        },
+        {
+          "element": "input",
+          "label": "单服务器",
+          "attributes": {
+            "type": "checkbox",
+            "id": "on_one_server",
+            "name": "on_one_server",
+            "lay-skin": "switch",
+            "lay-text": "是|否"
+          }
+        },
+        {
+          "element": "input",
+          "label": "后台模式",
+          "attributes": {
+            "type": "checkbox",
+            "id": "in_background",
+            "name": "in_background",
+            "lay-skin": "switch",
+            "lay-text": "是|否"
+          }
+        },
+        {
+          "element": "input",
+          "label": "维护模式",
+          "attributes": {
+            "type": "checkbox",
+            "id": "in_maintenance_mode",
+            "name": "in_maintenance_mode",
+            "lay-skin": "switch",
+            "lay-text": "是|否"
+          }
+        },
+        {
+          "element": "input",
+          "label": "输出日志",
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "output_file_path",
+            "name": "output_file_path",
+            "autocomplete": "off"
+          }
+        },
+        {
+          "element": "input",
+          "label": "日志追加",
+          "attributes": {
+            "type": "checkbox",
+            "id": "output_append",
+            "name": "output_append",
+            "lay-skin": "switch",
+            "lay-text": "是|否"
+          }
+        },
+        {
+          "element": "input",
+          "label": "输出邮件",
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "output_email",
+            "name": "output_email",
+            "autocomplete": "off"
+          }
+        },
+        {
+          "element": "input",
+          "label": "失败邮件",
+          "attributes": {
+            "type": "checkbox",
+            "id": "output_email_on_failure",
+            "name": "output_email_on_failure",
+            "lay-skin": "switch",
+            "lay-text": "是|否"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "element": "button",
+          "label": "提 交",
+          "icon": "layui-icon layui-icon-ok",
+          "attributes": {
+            "type": "submit",
+            "class": "pear-btn pear-btn-primary pear-btn-sm",
+            "lay-submit": "",
+            "lay-filter": "system-schedule-edit-submit",
+            "data-api-uri": "/api/schedules",
+            "data-api-method": "post"
+          }
+        },
+        {
+          "element": "button",
+          "label": "重 置",
+          "icon": "layui-icon layui-icon-refresh",
+          "attributes": {
+            "type": "reset",
+            "class": "pear-btn pear-btn-sm"
+          }
+        }
+      ]
+    }
+  }
+}
