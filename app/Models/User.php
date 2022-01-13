@@ -3,6 +3,7 @@
 
 namespace App\Models;
 
+use App\Enums\RoleEnum;
 use App\Support\Traits\SerializeDate;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,10 +12,11 @@ use Illuminate\Notifications\Notifiable;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 use Spatie\Activitylog\Traits\CausesActivity;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements Transformable
 {
-    use HasFactory, Notifiable, CausesActivity, TransformableTrait, SerializeDate;
+    use HasFactory, Notifiable, CausesActivity, TransformableTrait, SerializeDate, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -54,5 +56,10 @@ class User extends Authenticatable implements Transformable
     protected static function newFactory()
     {
         return UserFactory::new();
+    }
+
+    public function isSuperAdmin()
+    {
+        return $this->hasRole(RoleEnum::SUPER_ADMIN()->name);
     }
 }
