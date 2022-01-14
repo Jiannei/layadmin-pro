@@ -24,7 +24,7 @@ return [
             'prefix' => env('ADMIN_API_PREFIX', 'api'),
 
             'middleware' => ['web'],
-        ]
+        ],
     ],
 
     'auth' => [
@@ -37,6 +37,14 @@ return [
     ],
 
     'https' => env('ADMIN_HTTPS', false),
+
+    'cache' => [
+        'expiration_time' => \DateInterval::createFromDateString('24 hours'),
+
+        'key' => 'layadmin:config',
+
+        'store' => 'default',
+    ],
 
     // layui 组件全局配置
     'table' => [

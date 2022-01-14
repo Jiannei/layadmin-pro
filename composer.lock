@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "555893fb117edb3c32a8035a63f2a3fa",
+    "content-hash": "dbaea51dd5386b743792ab434d0f9ca5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1494,6 +1494,62 @@
             "time": "2021-11-13T15:36:39+00:00"
         },
         {
+            "name": "jiannei/laravel-options",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jiannei/laravel-options.git",
+                "reference": "d9cea350f76ce4ddfdd902814cabd9e74b5300bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jiannei/laravel-options/zipball/d9cea350f76ce4ddfdd902814cabd9e74b5300bd",
+                "reference": "d9cea350f76ce4ddfdd902814cabd9e74b5300bd",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.21"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Jiannei\\LaravelOptions\\Providers\\LaravelServiceProvider"
+                    ],
+                    "aliases": {
+                        "Response": "Jiannei\\LaravelOptions\\Support\\Facades\\Option"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jiannei\\LaravelOptions\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jiannei",
+                    "email": "longjian.huang@foxmail.com"
+                }
+            ],
+            "description": "Global key-value store in the database",
+            "support": {
+                "issues": "https://github.com/Jiannei/laravel-options/issues",
+                "source": "https://github.com/Jiannei/laravel-options/tree/v1.0.0"
+            },
+            "time": "2021-09-27T03:19:09+00:00"
+        },
+        {
             "name": "jiannei/laravel-response",
             "version": "v4.1.0",
             "source": {
@@ -1624,12 +1680,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Jiannei/layadmin.git",
-                "reference": "640e1e11b8070e9d4a0cdcfc64ce20dee4a9c33c"
+                "reference": "18cb4d51f5d438d85a3b2fae2df42042faa994a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Jiannei/layadmin/zipball/640e1e11b8070e9d4a0cdcfc64ce20dee4a9c33c",
-                "reference": "640e1e11b8070e9d4a0cdcfc64ce20dee4a9c33c",
+                "url": "https://api.github.com/repos/Jiannei/layadmin/zipball/18cb4d51f5d438d85a3b2fae2df42042faa994a8",
+                "reference": "18cb4d51f5d438d85a3b2fae2df42042faa994a8",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1688,7 +1744,7 @@
                 "issues": "https://github.com/Jiannei/layadmin/issues",
                 "source": "https://github.com/Jiannei/layadmin/tree/main"
             },
-            "time": "2022-01-13T03:35:55+00:00"
+            "time": "2022-01-14T08:03:02+00:00"
         },
         {
             "name": "laravel-lang/lang",

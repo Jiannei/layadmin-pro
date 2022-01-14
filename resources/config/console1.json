@@ -1,5 +1,5 @@
 {
-    "uri": "admin/console1",
+    "uri": "console1",
     "layout": "base",
     "title": "控制后台",
     "view": "console1",
