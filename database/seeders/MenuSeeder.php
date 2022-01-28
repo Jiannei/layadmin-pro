@@ -40,17 +40,18 @@ class MenuSeeder extends Seeder
                 "href" => "",
                 "children" => [
                     [
-                        "title" => "权限列表",
-                        "icon" => "",
-                        "open_type" => "_iframe",
-                        "href" => "org/permission/index",
-                    ],
-                    [
                         "title" => "角色列表",
                         "icon" => "",
                         "open_type" => "_iframe",
                         "href" => "org/role/index",
                     ],
+                    [
+                        "title" => "权限列表",
+                        "icon" => "",
+                        "open_type" => "_iframe",
+                        "href" => "org/permission/index",
+                    ],
+
                     [
                         "title" => "用户列表",
                         "icon" => "",
@@ -93,6 +94,12 @@ class MenuSeeder extends Seeder
                         "icon" => "",
                         "open_type" => "_iframe",
                         "href" => "system/log/action",
+                    ],
+                    [
+                        "title" => "异常队列",
+                        "icon" => "",
+                        "open_type" => "_iframe",
+                        "href" => "system/log/job",
                     ],
                 ],
             ],

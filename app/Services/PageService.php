@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Console\Commands\Layadmin\SyncPages;
+use App\Console\Commands\Admin\SyncPages;
 use App\Contracts\PageRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;

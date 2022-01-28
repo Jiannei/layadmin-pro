@@ -200,6 +200,7 @@
       ],
       "actions": [
         {
+          "permission": "system:schedule:add",
           "element": "button",
           "label": "提 交",
           "icon": "layui-icon layui-icon-ok",

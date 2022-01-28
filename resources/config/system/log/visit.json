@@ -79,6 +79,7 @@
       },
       "actions": [
         {
+          "permission": "system:log:clear",
           "position": "toolbar",
           "element": "button",
           "label": "清除日志",

@@ -84,6 +84,7 @@
       },
       "actions":[
         {
+          "permission": "system:menu:add",
           "position": "toolbar",
           "element": "button",
           "label": "新增",
@@ -106,6 +107,7 @@
           }
         },
         {
+          "permission": "system:menu:edit",
           "position": "column",
           "element": "button",
           "label": "",
@@ -119,6 +121,7 @@
           }
         },
         {
+          "permission": "system:menu:delete",
           "position": "column",
           "element": "button",
           "label": "",

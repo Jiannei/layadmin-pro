@@ -18,7 +18,7 @@ abstract class Model extends BaseModel implements Transformable
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-            ->useLogName($this->getTable())
+            ->useLogName('model:'.$this->getTable())
             ->logFillable()
             ->logOnlyDirty()
             ->dontSubmitEmptyLogs();

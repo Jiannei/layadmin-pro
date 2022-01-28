@@ -96,6 +96,7 @@
       ],
       "actions": [
         {
+          "permission": "system:menu:add",
           "element": "button",
           "label": "提 交",
           "icon": "layui-icon layui-icon-ok",

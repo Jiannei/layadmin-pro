@@ -121,6 +121,7 @@
       },
       "actions": [
         {
+          "permission": "system:page:sync",
           "position": "toolbar",
           "element": "button",
           "label": "同步",

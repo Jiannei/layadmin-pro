@@ -201,6 +201,7 @@
       ],
       "actions": [
         {
+          "permission": "system:schedule:edit",
           "element": "button",
           "label": "提 交",
           "icon": "layui-icon layui-icon-ok",

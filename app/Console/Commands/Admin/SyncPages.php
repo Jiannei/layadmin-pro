@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\Layadmin;
+namespace App\Console\Commands\Admin;
 
 use App\Models\Menu;
 use App\Models\Page;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\File;
 
 class SyncPages extends Command
 {
-    protected $name = 'layadmin:sync-pages';
+    protected $name = 'admin:sync-pages';
 
     protected $description = '同步页面配置到数据库';
 

@@ -122,6 +122,7 @@
       },
       "actions": [
         {
+          "permission": "system:schedule:add",
           "position": "toolbar",
           "element": "button",
           "label": "新增",
@@ -134,6 +135,7 @@
           }
         },
         {
+          "permission": "system:schedule:edit",
           "position": "column",
           "element": "button",
           "label": "",
@@ -147,6 +149,7 @@
           }
         },
         {
+          "permission": "system:schedule:delete",
           "position": "column",
           "element": "button",
           "label": "",

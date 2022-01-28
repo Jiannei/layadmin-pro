@@ -108,6 +108,7 @@
       },
       "actions": [
         {
+          "permission": "org:user:add",
           "position": "toolbar",
           "element": "button",
           "label": "新增",
@@ -120,6 +121,7 @@
           }
         },
         {
+          "permission": "org:user:edit",
           "position": "column",
           "element": "button",
           "label": "",
@@ -133,6 +135,7 @@
           }
         },
         {
+          "permission": "org:user:delete",
           "position": "column",
           "element": "button",
           "label": "",

@@ -1,7 +1,7 @@
 {
   "uri": "org/user/edit",
   "layout": "form",
-  "title": "用户新增",
+  "title": "用户编辑",
   "view": "layadmin::form",
   "styles": [
   ],
@@ -55,6 +55,7 @@
       ],
       "actions": [
         {
+          "permission": "org:user:edit",
           "element": "button",
           "label": "提 交",
           "icon": "layui-icon layui-icon-ok",

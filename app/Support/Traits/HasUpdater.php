@@ -38,6 +38,6 @@ trait HasUpdater
             $user = $user->id;
         }
 
-        return $this->updater_id === intval($user);
+        return $this->updater_id === (int)$user;
     }
 }
