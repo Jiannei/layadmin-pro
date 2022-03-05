@@ -71,4 +71,14 @@ class OptionService extends Service
             ];
         });
     }
+
+    public function guards()
+    {
+        return collect(array_keys(config('auth.guards')))->map(function ($item) {
+            return [
+                'name' => $item,
+                'value' => $item,
+            ];
+        });
+    }
 }

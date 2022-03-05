@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Contracts\RoleRepository;
 use App\Models\Role;
+use App\Presenters\RolePresenter;
 use App\Validators\RoleValidator;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
@@ -25,7 +26,10 @@ class RoleRepositoryEloquent extends BaseRepository implements RoleRepository
         return Role::class;
     }
 
-    
+    public function presenter()
+    {
+        return RolePresenter::class;
+    }
 
     /**
      * Boot up the repository, pushing criteria

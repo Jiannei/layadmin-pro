@@ -1,0 +1,153 @@
+{
+  "uri": "org/permission/index",
+  "layout": "table",
+  "title": "权限列表",
+  "view": "layadmin::table",
+  "styles": [],
+  "scripts": [
+    "admin/js/org/permission/index.js"
+  ],
+  "components": {
+    "search": {
+      "attributes": {
+        "class": "layui-form",
+        "lay-filter": "org-permission-index-search"
+      },
+      "items": [
+        {
+          "element": "input",
+          "label": "账号",
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "name",
+            "name": "name"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "element": "button",
+          "label": "查 询",
+          "icon": "layui-icon layui-icon-search",
+          "attributes": {
+            "type": "submit",
+            "class": "pear-btn pear-btn-primary pear-btn-md",
+            "lay-submit": "",
+            "lay-filter": "page-index-search-submit"
+          }
+        },
+        {
+          "element": "button",
+          "label": "重 置",
+          "icon": "layui-icon layui-icon-refresh",
+          "attributes": {
+            "type": "reset",
+            "class": "pear-btn pear-btn-md"
+          }
+        }
+      ]
+    },
+    "table": {
+      "element": "table",
+      "attributes": {
+        "id": "org-permission-index",
+        "lay-filter": "org-permission-index"
+      },
+      "config": {
+        "elem": "#org-permission-index",
+        "url": "/api/permissions",
+        "toolbar": "#org-permission-index-toolbar",
+        "height": "full-180",
+        "limit": 15,
+        "limits": [
+          15,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100
+        ],
+        "cols": [
+          [
+            {
+              "field": "id",
+              "title": "ID",
+              "width": 80
+            },
+            {
+              "field": "name",
+              "title": "账号"
+            },
+            {
+              "field": "email",
+              "title": "邮箱地址"
+            },
+            {
+              "field": "created_at",
+              "title": "创建时间"
+            },
+            {
+              "field": "updated_at",
+              "title": "更新时间"
+            },
+            {
+              "type": "action",
+              "title": "操作",
+              "toolbar": "#org-permission-index-bar",
+              "align": "left",
+              "width": 120,
+              "fixed": "right"
+            }
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "permission": "org:permission:add",
+          "position": "toolbar",
+          "element": "button",
+          "label": "新增",
+          "icon": "layui-icon layui-icon-add-1",
+          "attributes": {
+            "class": "pear-btn pear-btn-primary pear-btn-md",
+            "lay-event": "add",
+            "data-api-uri": "/api/permissions",
+            "data-api-method": "post"
+          }
+        },
+        {
+          "permission": "org:permission:edit",
+          "position": "column",
+          "element": "button",
+          "label": "",
+          "icon": "layui-icon layui-icon-edit",
+          "attributes": {
+            "class": "pear-btn pear-btn-primary pear-btn-sm",
+            "lay-event": "edit",
+            "data-field": "id",
+            "data-api-uri": "/api/permissions/{id}",
+            "data-api-method": "put"
+          }
+        },
+        {
+          "permission": "org:permission:delete",
+          "position": "column",
+          "element": "button",
+          "label": "",
+          "icon": "layui-icon layui-icon-delete",
+          "attributes": {
+            "class": "pear-btn pear-btn-danger pear-btn-sm",
+            "lay-event": "delete",
+            "data-api-uri": "/api/permissions/{id}",
+            "data-api-method": "delete"
+          }
+        }
+      ]
+    }
+  }
+}

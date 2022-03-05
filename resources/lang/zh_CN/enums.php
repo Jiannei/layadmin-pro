@@ -11,6 +11,7 @@
 
 use App\Enums\LogEnum;
 use App\Enums\ResponseCodeEnum;
+use App\Enums\RoleEnum;
 use App\Enums\ScheduleEnum;
 use Jiannei\Enum\Laravel\Repositories\Enums\HttpStatusCodeEnum;
 
@@ -61,4 +62,10 @@ return [
     ScheduleEnum::class => [
         ScheduleEnum::GITHUB_TRENDING => '同步 Github Trending',
     ],
+
+    // 系统内置角色
+    RoleEnum::class => [
+        RoleEnum::SUPER_ADMIN => '超级管理员',
+        RoleEnum::ADMIN => '管理员'
+    ]
 ];

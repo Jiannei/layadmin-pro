@@ -1,0 +1,171 @@
+{
+  "uri": "org/role/index",
+  "layout": "table",
+  "title": "角色列表",
+  "view": "layadmin::table",
+  "styles": [],
+  "scripts": [
+    "admin/js/org/role/index.js"
+  ],
+  "components": {
+    "search": {
+      "attributes": {
+        "class": "layui-form",
+        "lay-filter": "org-role-index-search"
+      },
+      "items": [
+        {
+          "element": "input",
+          "label": "名称",
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "name",
+            "name": "name"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "element": "button",
+          "label": "查 询",
+          "icon": "layui-icon layui-icon-search",
+          "attributes": {
+            "type": "submit",
+            "class": "pear-btn pear-btn-primary pear-btn-md",
+            "lay-submit": "",
+            "lay-filter": "page-index-search-submit"
+          }
+        },
+        {
+          "element": "button",
+          "label": "重 置",
+          "icon": "layui-icon layui-icon-refresh",
+          "attributes": {
+            "type": "reset",
+            "class": "pear-btn pear-btn-md"
+          }
+        }
+      ]
+    },
+    "table": {
+      "element": "table",
+      "attributes": {
+        "id": "org-role-index",
+        "lay-filter": "org-role-index"
+      },
+      "config": {
+        "elem": "#org-role-index",
+        "url": "/api/roles",
+        "toolbar": "#org-role-index-toolbar",
+        "height": "full-180",
+        "limit": 15,
+        "limits": [
+          15,
+          20,
+          30,
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100
+        ],
+        "cols": [
+          [
+            {
+              "field": "id",
+              "title": "ID",
+              "width": 80
+            },
+            {
+              "field": "name",
+              "title": "名称"
+            },
+            {
+              "field": "description",
+              "title": "描述"
+            },
+            {
+              "field": "guard_name",
+              "title": "授权类型"
+            },
+            {
+              "field": "builtin",
+              "title": "系统内置",
+              "templet": "(function(d){ return d.builtin ? '是' : '否' })",
+              "align": "center"
+            },
+            {
+              "field": "created_at",
+              "title": "创建时间"
+            },
+            {
+              "field": "updated_at",
+              "title": "更新时间"
+            },
+            {
+              "type": "action",
+              "title": "操作",
+              "toolbar": "#org-role-index-bar",
+              "align": "left",
+              "width": 120,
+              "fixed": "right"
+            }
+          ]
+        ]
+      },
+      "actions": [
+        {
+          "permission": "org:role:add",
+          "position": "toolbar",
+          "element": "button",
+          "label": "新增",
+          "icon": "layui-icon layui-icon-add-1",
+          "attributes": {
+            "class": "pear-btn pear-btn-primary pear-btn-md",
+            "lay-event": "add",
+            "data-api-uri": "/api/roles",
+            "data-api-method": "post"
+          }
+        },
+        {
+          "permission": "org:role:edit",
+          "position": "column",
+          "element": "button",
+          "label": "",
+          "icon": "layui-icon layui-icon-edit",
+          "hide": {
+            "field": "builtin",
+            "value": true
+          },
+          "attributes": {
+            "class": "pear-btn pear-btn-primary pear-btn-sm",
+            "lay-event": "edit",
+            "data-field": "id",
+            "data-api-uri": "/api/roles/{id}",
+            "data-api-method": "put"
+          }
+        },
+        {
+          "permission": "org:role:delete",
+          "position": "column",
+          "element": "button",
+          "label": "",
+          "icon": "layui-icon layui-icon-delete",
+          "hide": {
+            "field": "builtin",
+            "value": true
+          },
+          "attributes": {
+            "class": "pear-btn pear-btn-danger pear-btn-sm",
+            "lay-event": "delete",
+            "data-api-uri": "/api/roles/{id}",
+            "data-api-method": "delete"
+          }
+        }
+      ]
+    }
+  }
+}

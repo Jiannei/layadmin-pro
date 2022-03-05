@@ -24,5 +24,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->register(RepositoryServiceProvider::class);
+        $this->app->register(AttributeServiceProvider::class);
     }
 }

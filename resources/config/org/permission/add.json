@@ -1,0 +1,85 @@
+{
+  "uri": "org/permission/add",
+  "layout": "form",
+  "title": "权限新增",
+  "view": "layadmin::form",
+  "styles": [
+  ],
+  "scripts": [
+    "admin/js/org/permission/add.js"
+  ],
+  "components": {
+    "form": {
+      "element": "form",
+      "attributes": {
+        "class": "layui-form",
+        "lay-filter": "org-permission-add"
+      },
+      "items": [
+        {
+          "element": "input",
+          "label": "账号",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "name",
+            "name": "name",
+            "autocomplete": "off",
+            "lay-verify": "required"
+          }
+        },
+        {
+          "element": "input",
+          "label": "邮箱",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "email",
+            "name": "email",
+            "autocomplete": "off",
+            "lay-verify": "required"
+          }
+        },
+        {
+          "element": "input",
+          "label": "密码",
+          "required": true,
+          "attributes": {
+            "type": "password",
+            "class": "layui-input",
+            "id": "password",
+            "name": "password",
+            "lay-verify": "required"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "permission": "org:permission:add",
+          "element": "button",
+          "label": "提 交",
+          "icon": "layui-icon layui-icon-ok",
+          "attributes": {
+            "type": "submit",
+            "class": "pear-btn pear-btn-primary pear-btn-sm",
+            "lay-submit": "",
+            "lay-filter": "org-permission-add-submit",
+            "data-api-uri": "/api/permissions",
+            "data-api-method": "post"
+          }
+        },
+        {
+          "element": "button",
+          "label": "重 置",
+          "icon": "layui-icon layui-icon-refresh",
+          "attributes": {
+            "type": "reset",
+            "class": "pear-btn pear-btn-sm"
+          }
+        }
+      ]
+    }
+  }
+}

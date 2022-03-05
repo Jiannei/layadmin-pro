@@ -1,0 +1,80 @@
+{
+  "uri": "org/role/add",
+  "layout": "form",
+  "title": "角色新增",
+  "view": "layadmin::form",
+  "styles": [
+  ],
+  "scripts": [
+    "admin/js/org/role/add.js"
+  ],
+  "components": {
+    "form": {
+      "element": "form",
+      "attributes": {
+        "class": "layui-form",
+        "lay-filter": "org-role-add"
+      },
+      "items": [
+        {
+          "element": "input",
+          "label": "名称",
+          "required": true,
+          "attributes": {
+            "type": "text",
+            "class": "layui-input",
+            "id": "name",
+            "name": "name",
+            "autocomplete": "off",
+            "lay-verify": "required"
+          }
+        },
+        {
+          "element": "select",
+          "label": "授权类型",
+          "required": true,
+          "attributes": {
+            "id": "guard_name",
+            "name": "guard_name",
+            "lay-verify": "required"
+          }
+        },
+        {
+          "element": "textarea",
+          "label": "描述",
+          "attributes": {
+            "type": "password",
+            "class": "layui-textarea",
+            "id": "description",
+            "name": "description"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "permission": "org:role:add",
+          "element": "button",
+          "label": "提 交",
+          "icon": "layui-icon layui-icon-ok",
+          "attributes": {
+            "type": "submit",
+            "class": "pear-btn pear-btn-primary pear-btn-sm",
+            "lay-submit": "",
+            "lay-filter": "org-role-add-submit",
+            "data-api-uri": "/api/roles",
+            "data-api-method": "post"
+          }
+        },
+        {
+          "element": "button",
+          "label": "重 置",
+          "icon": "layui-icon layui-icon-refresh",
+          "attributes": {
+            "type": "reset",
+            "class": "pear-btn pear-btn-sm"
+          }
+        }
+      ]
+    }
+  }
+}

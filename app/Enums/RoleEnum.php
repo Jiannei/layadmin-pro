@@ -3,10 +3,12 @@
 namespace App\Enums;
 
 use Closure;
+use Jiannei\Enum\Laravel\Contracts\LocalizedEnumContract;
 use Jiannei\Enum\Laravel\Enum;
 
-class RoleEnum extends Enum
+class RoleEnum extends Enum implements LocalizedEnumContract
 {
+    // 系统内置角色维护
     // guard_name:role_name
     public const SUPER_ADMIN = 'admin:super-admin';
     public const ADMIN = 'admin:admin';

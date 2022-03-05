@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\LogsController;
 use App\Http\Controllers\Api\MenusController;
 use App\Http\Controllers\Api\OptionsController;
 use App\Http\Controllers\Api\PagesController;
+use App\Http\Controllers\Api\RolesController;
 use App\Http\Controllers\Api\SchedulesController;
 use App\Http\Controllers\Api\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +51,12 @@ Route::middleware('auth:admin')->group(function () {
     Route::put('users/{id}', [UsersController::class, 'update']);
     Route::post('users', [UsersController::class, 'store']);
     Route::delete('users/{id}', [UsersController::class, 'destroy']);
+
+    Route::get('roles', [RolesController::class, 'index']);
+    Route::get('roles/{id}', [RolesController::class, 'show']);
+    Route::put('roles/{id}', [RolesController::class, 'update']);
+    Route::post('roles', [RolesController::class, 'store']);
+    Route::delete('roles/{id}', [RolesController::class, 'destroy']);
 
     // 日志管理
     Route::get('logs', [LogsController::class, 'index']);

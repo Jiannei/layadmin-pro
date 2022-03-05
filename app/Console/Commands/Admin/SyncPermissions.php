@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands\Admin;
 
+use App\Enums\PermissionEnum;
 use App\Enums\RoleEnum;
 use App\Models\Permission;
 use App\Models\Role;
@@ -44,10 +45,15 @@ class SyncPermissions extends Command
     {
         $this->comment('开始生成[角色]');
 
-        collect(RoleEnum::getValues())->map(function ($item) {
-            [$guard_name, $name] = explode(':', $item);
+        collect(RoleEnum::toSelectArray())->map(function ($item, $key) {
+            [$guard_name, $name] = explode(':', $key);
 
-            return compact('guard_name', 'name');
+            return [
+                'guard_name' => $guard_name,
+                'name' => $name,
+                'builtin' => true,
+                'description' => $item
+            ];
         })->each(function ($item) {
             Role::create($item);
         });
@@ -73,7 +79,7 @@ class SyncPermissions extends Command
 
             return array_values($actions);
         })->unique()->each(function ($permission) {
-            Permission::create(['name' => $permission, 'guard_name' => config('layadmin.guard')]);
+            Permission::create(['name' => $permission, 'guard_name' => config('layadmin.guard'), 'type' => PermissionEnum::ACTION]);
         });
     }
 }
